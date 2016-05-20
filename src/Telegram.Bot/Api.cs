@@ -1154,7 +1154,7 @@ namespace Telegram.Bot
             {
                 {"inline_query_id", inlineQueryId},
                 {"results", results},
-                {"is_personal", isPersonal}
+                {"is_personal", isPersonal}                
             };
 
             if (cacheTime.HasValue)
@@ -1493,7 +1493,9 @@ namespace Telegram.Bot
                 //TODO: catch more exceptions
 
                 if (responseObject == null)
-                    responseObject = new ApiResponse<T> {Ok = false, Message = "No response received"};
+                {
+                    responseObject = new ApiResponse<T> { Ok = false, Message = "No response received" };
+                }
 
                 if (!responseObject.Ok)
                     throw new ApiRequestException(responseObject.Message, responseObject.Code);

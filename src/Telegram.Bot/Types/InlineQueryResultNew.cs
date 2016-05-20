@@ -5,6 +5,12 @@ namespace Telegram.Bot.Types
     public class InlineQueryResultNew : InlineQueryResult
     {
         /// <summary>
+        /// Required, see https://core.telegram.org/bots/api#inputtextmessagecontent
+        /// </summary>
+        [JsonProperty("message_text", Required = Required.Always)]
+        public string MessageText { get; set; }
+
+        /// <summary>
         /// Optional. Url of the thumbnail for the result
         /// </summary>
         [JsonProperty("thumb_url", Required = Required.Default)]
