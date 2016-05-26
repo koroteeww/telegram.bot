@@ -1430,7 +1430,7 @@ namespace Telegram.Bot
                 throw new ApiRequestException("Invalid token", 401);
 
             var uri = new Uri(BaseUrl + _token + "/" + method);
-
+            
             using (var client = new HttpClient())
             {
                 ApiResponse<T> responseObject = null;
